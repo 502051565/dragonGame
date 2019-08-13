@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+}
+body,html,ul,li,p,dl,dt,dd,h1,h2,h3,h4,h5{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 400;
+    font-style: normal;
+}
+html{
+    font: 100px/1 Microsoft Yahei,Helvetica,Arial,sans-serif;
+    color: #272727;
+    margin: auto;
+}
+img,input{
+    outline: none;
+}
+::-webkit-input-placeholder {
+    color: #a2a2a2;
+}
+a{
+    color: #272727;
+    text-decoration: none;
+    outline: none;
+    -webkit-touch-callout: none;
+}
+div,ul,li,form,input,span,b,a,i,em{
+    -webkit-tap-highlight-color: transparent;
+    font-style: normal;
+}
+a:active{
+    /*color: #F25730;*/
+}
+
+/*globla and reset*/
+html {
+    font-size: 34px;
+}
+@media screen and (min-width: 255px)  {
+    html {
+        /*
+            750px  字体 100px
+            510px  字体 78px
+            255px  字体 34px
+         */
+        font-size: calc( 34px + (78 - 34) * (100vw - 255px) / (510 - 255) ); 
+        font-size: calc( 100% + (78 - 34) * (100vw - 255px) / (510 - 255) ); 
+    }
+}
+@media screen and (min-width: 509px){
+    html {
+        font-size: 78px;
+    }
+}
+
+/*common*/
+.wrapper{
+    max-width: 510px;
+    margin: 0 auto;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.hide{
+    display: none;
+}
+.cl:after {
+    content: '\20';
+    display: table;
+    height: 0;
+    overflow: hidden;
+    clear: both
+}
+
