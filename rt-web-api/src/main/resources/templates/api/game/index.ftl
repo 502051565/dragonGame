@@ -21,15 +21,13 @@
         })()
     </script>
     <style>
-        [v-cloak] {
-            display:none !important;
-        }
+
 
     </style>
 </head>
 
 <body>
-    <div class="wrap" id="app" v-cloak>
+    <div class="wrap">
         <div class="fixed_header">
             <dl>
                 <dt>
@@ -45,11 +43,11 @@
         </div>
         <div class="banner">
             <img src="${ctx}/assets/game/img/head.png" alt="">
-            <div class="btn" @click="showReserve"></div>
+            <div class="btn"></div>
         </div>
         <div class="content_center">
             <div class="head_num">
-                <span>2134134</span>
+                <span id="reserveNum"></span>
             </div>
             <div class="gift">
                 <img src="${ctx}/assets/game/img/gift1.png" alt="">
@@ -118,7 +116,7 @@
                 </div>
                  <div id="contentBox">
                     <div class="box active">
-                        <input type="text" placeholder="请输入手机号" class="tel">
+                        <input type="text" placeholder="请输入手机号" class="tel" id="phoneIOS">
                         <div class="ipt">
                             <input type="text" placeholder="输入图片中验证码，点击图片即可刷新">
                             <div class="Imgcode">
@@ -132,14 +130,14 @@
                             </div>
                         </div>
                         <div class="makeAway">
-                            <img src="${ctx}/assets/game/img/img3.png" alt="">
+                            <img  class="submitIOS" src="${ctx}/assets/game/img/img3.png" alt="">
                         </div>
                         <p>预约游戏即可获得专属邀请码，邀请好友预约游戏，公测即可获得丰富奖励哦！</p>
-                        <input type="text" placeholder="输入好友邀请码，助TA得奖励（选填）" class="yaocode">
+                        <input type="text" placeholder="输入好友邀请码，助TA得奖励（选填）" class="yaocode" id="invitationCodeIOS">
                     </div>    
 
                      <div class="box">
-                        <input type="text" placeholder="请输入手机号" class="tel">
+                        <input type="text" placeholder="请输入手机号" class="tel" id="phoneAnd">
                         <div class="ipt">
                             <input type="text" placeholder="输入图片中验证码，点击图片即可刷新">
                             <div class="Imgcode">
@@ -153,10 +151,10 @@
                             </div>
                         </div>
                         <div class="makeAway">
-                            <img src="${ctx}/assets/game/img/img3.png" alt="">
+                            <img class="submitAnd" src="${ctx}/assets/game/img/img3.png" alt="">
                         </div>
                         <p>预约游戏即可获得专属邀请码，邀请好友预约游戏，公测即可获得丰富奖励哦！</p>
-                        <input type="text" placeholder="输入好友邀请码，助TA得奖励（选填）" class="yaocode">
+                        <input type="text" placeholder="输入好友邀请码，助TA得奖励（选填）" class="yaocode" id="invitationCodeAnd">
                     </div>
                      
                        
@@ -212,138 +210,60 @@
     <script src="${ctx}/assets/game/js/swiper.min.js"></script>
     <script src="${ctx}/assets/game/js/jquery-1.11.0.min.js"></script>
     <script src="${ctx}/assets/game/js/index.js"></script>
+<script>
+    $(function(){
+        var nu=Number(12134+${num});
+        $("#reserveNum").text(nu);
+    })
+
+    $('.submitIOS').click(function () {
+        var phoneIOS=$("#phoneIOS").val();
+        var invitationCodeIOS=$("#invitationCodeIOS").val();
+        if(phoneIOS===""){
+            alert("手机号不能为空");
+            return;
+        }
+        var obj={
+            facility:1,
+            phone:phoneIOS,
+            invitationCode:invitationCodeIOS
+        };
+        save(obj);
+
+    });
+
+    $('.submitAnd').click(function () {
+        var phoneAnd=$("#phoneAnd").val();
+        var invitationCodeAnd=$("#invitationCodeAnd").val();
+        if(phoneAnd===""){
+            alert("手机号不能为空");
+            return;
+        }
+        var obj={
+            facility:2,
+            phone:phoneAnd,
+            invitationCode:invitationCodeAnd
+        };
+        save(obj);
+    });
+
+    function save(obj) {
+        $.ajax({
+            url: "${ctx}/api/activityReserve/save",
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            data: JSON.stringify(obj),
+            success: function (re) {
+                if (re.code === 0) {
+                    window.location.href="${ctx}/api/activityReserve/index"
+                } else {
+                    alert(re.msg);
+                }
+            }
+        })
+    }
+
+</script>
 
 </body>
-<script src="${ctx}/assets/js/vue.js"></script>
-<script src="${ctx}/assets/js/jquery/jquery.js"></script>
-<script>
-
-    var vm = new Vue({
-        el:"#app" ,
-        data:{
-            isObtain:true,//获取验证码
-            isActive:false,
-            from:{
-                phone:"",
-                code:""
-            },
-            second: 60,
-            flag: true,
-            timer: null // 该变量是用来记录定时器的,防止点击的时候触发多个setInterval
-        },
-        create(){
-            this.judgeCode()
-        },
-
-        mounted(){
-
-
-        },
-        methods:{
-            inputVal(){
-                if (this.from.phone!="" && this.from.code!="") {
-                    this.isActive=true ;
-                }else{
-                    this.isActive=false ;
-                }
-            },
-            showReserve(){
-                $('.mask').show();
-                $('#yuyue').show()
-            },
-            getCode() {
-                if(vm.from.phone===""){
-                    alert('请输入手机号');
-                    return false
-                }
-                if (vm.flag) {
-                    vm.flag = false;
-                    var interval = window.setInterval(function() {
-                        vm.setStorage(vm.second);
-                        if (vm.second-- <= 0) {
-                            vm.second = 60;
-                            vm.flag = true;
-                            window.clearInterval(interval);
-                        }
-                    }, 1000);
-                }
-
-                $.ajax({
-                    url: "${ctx}/api/register/getCode/"+vm.from.phone,
-                    type: "Get",
-                    data: null,
-                    success: function (re) {
-                        if (re.code === 0) {
-                        } else {
-                            alert(re.msg);
-                        }
-                    }
-                })
-            },
-            setStorage(parm) {
-                localStorage.setItem("dalay", parm);
-                localStorage.setItem("_time", new Date().getTime());
-            },
-            getStorage() {
-                var localDelay = {};
-                localDelay.delay = localStorage.getItem("dalay");
-                localDelay.sec = localStorage.getItem("_time");
-                return localDelay;
-            },
-            judgeCode() {
-                var that = this;
-                var localDelay = that.getStorage();
-                console.log(localDelay)
-                if (localDelay.delay=="0" || localDelay.delay=="1") {
-                    that.flag = true;
-                    console.log("已过期");
-                } else {
-                    that.flag = false;
-                    var _delay = localDelay.delay;
-                    that.second = _delay;
-                    that.timer = setInterval(function() {
-                        if (_delay > 1) {
-                            _delay--;
-                            that.setStorage(_delay);
-                            that.second = _delay;
-                            that.flag = false;
-                        } else {
-                            that.flag = true;
-                            window.clearInterval(that.timer);
-                        }
-                    }, 1000); }
-
-            },
-            payAlert(){
-                this.payShow=true
-            },
-            submits(){
-
-                if (this.from.phone==="") {
-                    alert('请输入手机号');
-                    return false
-                }
-                if(this.from.code===""){
-                    alert('请输入验证码');
-                    return false
-                }
-                $.ajax({
-                    url: "${ctx}/api/register/setPhone/"+vm.from.phone+"/"+this.from.code,
-                    type: "Get",
-                    data: null,
-                    success: function (re) {
-                        if (re.code === 0) {
-                            alert("绑定成功");
-                            window.location.href = "${(targetURL)!}";
-                        } else {
-                            alert(re.msg);
-                        }
-                    }
-                })
-
-
-            }
-        }
-    })
-</script>
 </html>

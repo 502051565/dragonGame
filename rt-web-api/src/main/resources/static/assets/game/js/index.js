@@ -22,8 +22,8 @@
         $(this).addClass("on").siblings().removeClass("on");
         $("#contentBox .box").eq(index).addClass("active").siblings().removeClass("active");
     });
-   /* $('.btn').click(function () {
+    $('.btn').click(function () {
         $('.mask').show()
         $('#yuyue').show()
-    })*/
-})()
+    })
+})();
