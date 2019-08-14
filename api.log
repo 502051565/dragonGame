@@ -5220,3 +5220,75 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'os
 2019-08-14 17:17:34.459 DEBUG 10552 --- [main] c.r.c.listener.ApplicationEventListener  : org.springframework.boot.context.event.ApplicationStartedEvent[source=org.springframework.boot.SpringApplication@1c0e4262]
 2019-08-14 17:17:34.463 DEBUG 10552 --- [main] c.r.c.listener.ApplicationEventListener  : 应用已启动完成
 2019-08-14 17:17:34.464 DEBUG 10552 --- [main] com.rt.RtApiApplication                  : Api启动成功
+2019-08-14 17:22:59.922 DEBUG 11648 --- [main] c.r.c.listener.ApplicationEventListener  : 初始化环境变量
+2019-08-14 17:23:00.092  INFO 11648 --- [main] com.rt.RtApiApplication                  : Starting RtApiApplication on DESKTOP-E9SR36I with PID 11648 (D:\workspace201902\dragonGame\rt-web-api\target\classes started by lwy in D:\workspace201902\dragonGame)
+2019-08-14 17:23:00.093 DEBUG 11648 --- [main] com.rt.RtApiApplication                  : Running with Spring Boot v2.0.1.RELEASE, Spring v5.0.5.RELEASE
+2019-08-14 17:23:00.094  INFO 11648 --- [main] com.rt.RtApiApplication                  : The following profiles are active: dev
+2019-08-14 17:23:00.560 DEBUG 11648 --- [main] c.r.c.listener.ApplicationEventListener  : 初始化环境变量完成
+2019-08-14 17:23:00.560  INFO 11648 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3c7c886c: startup date [Wed Aug 14 17:23:00 AWST 2019]; root of context hierarchy
+2019-08-14 17:23:02.065  INFO 11648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-08-14 17:23:02.716  INFO 11648 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'taskExecutorConfig' of type [com.rt.common.config.TaskExecutorConfig$$EnhancerBySpringCGLIB$$38635d98] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-14 17:23:02.722  INFO 11648 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 
+2019-08-14 17:23:02.886  INFO 11648 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$57d79eef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-14 17:23:02.960  INFO 11648 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ec568d1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-14 17:23:03.655  INFO 11648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-08-14 17:23:03.695  INFO 11648 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-14 17:23:03.695  INFO 11648 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2019-08-14 17:23:03.701  INFO 11648 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_151\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\NetSarang\Xshell 6\;E:\app\lwy\product\11.2.0\dbhome_2\bin;E:\solr\apache-tomcat-9.0.21\bin;E:\solr\apache-tomcat-9.0.21\lib;NODE_PATH%;E:\solr\apache-tomcat-9.0.21/bin;D:\apache-maven-3.5.2\bin;C:\Program Files\Java\jdk1.8.0_151/bin;C:\Program Files\Java\jre1.8.0_151/bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseGit\bin;C:\Program Files\SlikSvn\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs;C:\Users\Administrator\Desktop\apache-tomcat-8.0.52\bin;E:\solr\apache-tomcat-9.0.21\lib;C:\Users\lwy\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\lwy\AppData\Local\Programs\Python\Python37\;C:\Users\lwy\AppData\Roaming\npm;C:\Users\lwy\AppData\Local\GitHubDesktop\bin;.]
+2019-08-14 17:23:03.883  INFO 11648 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-14 17:23:03.883  INFO 11648 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3323 ms
+2019-08-14 17:23:04.193  INFO 11648 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-14 17:23:04.194  INFO 11648 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-14 17:23:04.194  INFO 11648 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-08-14 17:23:04.194  INFO 11648 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-14 17:23:04.194  INFO 11648 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'xssFilter' to urls: [/*]
+2019-08-14 17:23:04.194  INFO 11648 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-08-14 17:23:04.632  INFO 11648 --- [main] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Starting...
+2019-08-14 17:23:04.830  INFO 11648 --- [main] com.zaxxer.hikari.HikariDataSource       : DatebookHikariCP - Start completed.
+2019-08-14 17:23:05.151  WARN 11648 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.rt.modules.dragon.entity.TbCoreUserOpen.
+2019-08-14 17:23:05.188  WARN 11648 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.rt.modules.dragon.entity.TbUserToken.
+2019-08-14 17:23:05.240  WARN 11648 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.rt.modules.dragon.entity.TbWxApp.
+2019-08-14 17:23:05.271  WARN 11648 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.rt.modules.dragon.entity.TbWxUser.
+2019-08-14 17:23:05.498  INFO 11648 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-08-14 17:23:05.645  WARN 11648 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.rt.modules.dragon.entity.TbCoreApp.
+2019-08-14 17:23:05.829 DEBUG 11648 --- [main] com.rt.common.config.FreeMarkerConfig    : 自定义FreeMarkerViewResolver加载完成
+2019-08-14 17:23:06.113 DEBUG 11648 --- [main] com.rt.common.config.redis.RedisConfig   : 自定义RedisCacheManager加载完成
+2019-08-14 17:23:06.124 DEBUG 11648 --- [main] com.rt.common.config.redis.RedisConfig   : 自定义RedisTemplate加载完成
+2019-08-14 17:23:06.393  INFO 11648 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-14 17:23:06.935  INFO 11648 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3c7c886c: startup date [Wed Aug 14 17:23:00 AWST 2019]; root of context hierarchy
+2019-08-14 17:23:07.044  INFO 11648 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activityReserve/index],methods=[GET]}" onto public java.lang.String com.rt.api.ActivityReserveController.index(org.springframework.ui.Model)
+2019-08-14 17:23:07.046  INFO 11648 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/activityReserve/save],methods=[POST]}" onto public com.rt.common.page.R com.rt.api.ActivityReserveController.save(com.rt.modules.dragon.entity.TbCoreActivityReserve,javax.servlet.http.HttpServletRequest)
+2019-08-14 17:23:07.047  INFO 11648 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/common/captcha.jpg],methods=[GET]}" onto public void com.rt.api.CommonController.captcha(javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpServletRequest) throws javax.servlet.ServletException,java.io.IOException
+2019-08-14 17:23:07.050  INFO 11648 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-08-14 17:23:07.052  INFO 11648 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-14 17:23:07.147  INFO 11648 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-14 17:23:07.147  INFO 11648 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-14 17:23:07.171  INFO 11648 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalDefaultExceptionHandler
+2019-08-14 17:23:08.235  INFO 11648 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2019-08-14 17:23:08.249  INFO 11648 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-08-14 17:23:08.250  INFO 11648 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.0 created.
+2019-08-14 17:23:08.251  INFO 11648 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2019-08-14 17:23:08.253  INFO 11648 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2019-08-14 17:23:08.253  INFO 11648 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2019-08-14 17:23:08.253  INFO 11648 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.0
+2019-08-14 17:23:08.253  INFO 11648 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@48106381
+2019-08-14 17:23:08.398  INFO 11648 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-08-14 17:23:08.400  INFO 11648 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-08-14 17:23:08.408  INFO 11648 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-08-14 17:23:08.414  INFO 11648 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2019-08-14 17:23:08.415  INFO 11648 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2019-08-14 17:23:08.415  INFO 11648 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2019-08-14 17:23:08.416 DEBUG 11648 --- [main] c.r.c.listener.ApplicationEventListener  : 应用刷新
+2019-08-14 17:23:08.468  INFO 11648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-08-14 17:23:08.471 DEBUG 11648 --- [main] c.r.c.listener.ApplicationEventListener  : org.springframework.boot.web.servlet.context.ServletWebServerInitializedEvent[source=org.springframework.boot.web.embedded.tomcat.TomcatWebServer@7769d9b6]
+2019-08-14 17:23:08.476  INFO 11648 --- [main] com.rt.RtApiApplication                  : Started RtApiApplication in 9.273 seconds (JVM running for 12.044)
+2019-08-14 17:23:08.478 DEBUG 11648 --- [main] c.r.c.listener.ApplicationEventListener  : org.springframework.boot.context.event.ApplicationStartedEvent[source=org.springframework.boot.SpringApplication@102af1bb]
+2019-08-14 17:23:08.481 DEBUG 11648 --- [main] c.r.c.listener.ApplicationEventListener  : 应用已启动完成
+2019-08-14 17:23:08.481 DEBUG 11648 --- [main] com.rt.RtApiApplication                  : Api启动成功
