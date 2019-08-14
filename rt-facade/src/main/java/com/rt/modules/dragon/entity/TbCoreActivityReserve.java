@@ -30,7 +30,7 @@ public class TbCoreActivityReserve extends Model<TbCoreActivityReserve> {
     /**
      * 设备,1ios，2andorid
      */
-    private Boolean facility;
+    private int facility;
 
     private LocalDateTime updateTime;
 
@@ -52,6 +52,14 @@ public class TbCoreActivityReserve extends Model<TbCoreActivityReserve> {
      */
     private Long activityId;
 
+    /**
+     * img验证码
+     */
+    @TableField(exist = false)
+    private String imgCodeIOS;
+    @TableField(exist = false)
+    private String imgCodeAnd;
+
 
     public Long getId() {
         return id;
@@ -69,11 +77,11 @@ public class TbCoreActivityReserve extends Model<TbCoreActivityReserve> {
         this.phone = phone;
     }
 
-    public Boolean getFacility() {
+    public int getFacility() {
         return facility;
     }
 
-    public void setFacility(Boolean facility) {
+    public void setFacility(int facility) {
         this.facility = facility;
     }
 
@@ -115,6 +123,23 @@ public class TbCoreActivityReserve extends Model<TbCoreActivityReserve> {
 
     public void setActivityId(Long activityId) {
         this.activityId = activityId;
+    }
+
+
+    public String getImgCodeIOS() {
+        return imgCodeIOS;
+    }
+
+    public void setImgCodeIOS(String imgCodeIOS) {
+        this.imgCodeIOS = imgCodeIOS;
+    }
+
+    public String getImgCodeAnd() {
+        return imgCodeAnd;
+    }
+
+    public void setImgCodeAnd(String imgCodeAnd) {
+        this.imgCodeAnd = imgCodeAnd;
     }
 
     @Override

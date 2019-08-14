@@ -118,9 +118,9 @@
                     <div class="box active">
                         <input type="text" placeholder="请输入手机号" class="tel" id="phoneIOS">
                         <div class="ipt">
-                            <input type="text" placeholder="输入图片中验证码，点击图片即可刷新">
+                            <input type="text" id="imgCodeIOS" placeholder="输入图片中验证码，点击图片即可刷新">
                             <div class="Imgcode">
-                                <img src="" alt="">
+                                <img src="${ctx}/api/common/captcha.jpg"  id="captchaIOS" alt="">
                             </div>
                         </div>
                         <div class="ipt">
@@ -139,9 +139,9 @@
                      <div class="box">
                         <input type="text" placeholder="请输入手机号" class="tel" id="phoneAnd">
                         <div class="ipt">
-                            <input type="text" placeholder="输入图片中验证码，点击图片即可刷新">
+                            <input type="text" id="imgCodeAnd" placeholder="输入图片中验证码，点击图片即可刷新">
                             <div class="Imgcode">
-                                <img src="" alt="">
+                                <img src="${ctx}/api/common/captcha.jpg"  id="captchaAnd" alt="">
                             </div>
                         </div>
                         <div class="ipt">
@@ -212,21 +212,35 @@
     <script src="${ctx}/assets/game/js/index.js"></script>
 <script>
     $(function(){
-        var nu=Number(12134+${num});
+        var nu=Number(121314+${num});
         $("#reserveNum").text(nu);
-    })
+
+
+        $('#captchaIOS').click(function(){
+            $('#captchaIOS').attr("src","${ctx}/api/common/captcha.jpg?seed="+Math.random());
+        });
+        $('#captchaAnd').click(function(){
+            $('#captchaAnd').attr("src","${ctx}/api/common/captcha.jpg?seed="+Math.random());
+        });
+    });
 
     $('.submitIOS').click(function () {
         var phoneIOS=$("#phoneIOS").val();
         var invitationCodeIOS=$("#invitationCodeIOS").val();
+        var imgCodeIOS=$("#imgCodeIOS").val();
         if(phoneIOS===""){
             alert("手机号不能为空");
+            return;
+        }
+        if(imgCodeIOS===""){
+            alert("图片验证码不能为空");
             return;
         }
         var obj={
             facility:1,
             phone:phoneIOS,
-            invitationCode:invitationCodeIOS
+            invitationCode:invitationCodeIOS,
+            imgCodeIOS:imgCodeIOS
         };
         save(obj);
 
@@ -235,14 +249,20 @@
     $('.submitAnd').click(function () {
         var phoneAnd=$("#phoneAnd").val();
         var invitationCodeAnd=$("#invitationCodeAnd").val();
+        var imgCodeAnd=$("#imgCodeAnd").val();
         if(phoneAnd===""){
             alert("手机号不能为空");
+            return;
+        }
+        if(imgCodeAnd===""){
+            alert("图片验证码不能为空");
             return;
         }
         var obj={
             facility:2,
             phone:phoneAnd,
-            invitationCode:invitationCodeAnd
+            invitationCode:invitationCodeAnd,
+            imgCodeAnd:imgCodeAnd
         };
         save(obj);
     });

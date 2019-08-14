@@ -1,6 +1,7 @@
 package com.rt.api;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.google.code.kaptcha.Constants;
 import com.rt.common.page.R;
 import com.rt.modules.dragon.entity.TbCoreActivityReserve;
 import com.rt.modules.dragon.service.ITbCoreActivityReserveService;
@@ -12,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.time.LocalDateTime;
 
 /**
@@ -41,6 +43,18 @@ public class ActivityReserveController {
     @ResponseBody
     public R save(@RequestBody TbCoreActivityReserve activityReserve, HttpServletRequest request) {
 
+        HttpSession session = request.getSession();
+        Object imgCode = session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
+        if(activityReserve.getFacility()==1){
+            if(!imgCode.toString().equals(activityReserve.getImgCodeIOS())){
+                return R.error(1,"图片验证码不正确");
+            }
+        }else{
+            if(!imgCode.toString().equals(activityReserve.getImgCodeAnd())){
+                return R.error(1,"图片验证码不正确");
+            }
+        }
+        session.removeAttribute(Constants.KAPTCHA_SESSION_KEY);
         activityReserve.setCreateTime(LocalDateTime.now());
         activityReserve.setUpdateTime(LocalDateTime.now());
         activityReserveService.save(activityReserve);
