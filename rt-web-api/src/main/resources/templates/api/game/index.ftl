@@ -275,6 +275,7 @@
             data: JSON.stringify(obj),
             success: function (re) {
                 if (re.code === 0) {
+                    alert("预约成功");
                     window.location.href="${ctx}/api/activityReserve/index"
                 } else {
                     alert(re.msg);

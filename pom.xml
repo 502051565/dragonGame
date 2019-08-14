@@ -72,8 +72,6 @@
         <module>rt-web-api</module>
         <module>rt-service</module>
         <module>rt-facade</module>
-        <module>rt-common-shiro</module>
-        <module>rt-common-oss</module>
     </modules>
 
 

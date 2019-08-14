@@ -12,7 +12,8 @@
 	<groupId>com.rt</groupId>
 	<artifactId>rt-web-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<!--<packaging>jar</packaging>-->
+	<packaging>war</packaging>
 
 	<name>rt-web-api</name>
 	<description>Demo project for Spring Boot</description>
@@ -25,6 +26,11 @@
         <dependency>
             <groupId>com.rt</groupId>
             <artifactId>rt-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.rt</groupId>
+            <artifactId>rt-facade</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
