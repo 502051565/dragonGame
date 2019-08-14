@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rt.modules.dragon.mapper.LobLevelLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.rt.modules.dragon.entity.LobLevelLog">
+        <id column="ID" property="id" />
+        <result column="ROLEID" property="roleid" />
+        <result column="ROLENAME" property="rolename" />
+        <result column="GROUPID" property="groupid" />
+        <result column="USERID" property="userid" />
+        <result column="ROLELEVEL" property="rolelevel" />
+        <result column="CHANNEL" property="channel" />
+        <result column="DAYTIME" property="daytime" />
+        <result column="LOGTIME" property="logtime" />
+    </resultMap>
+
+</mapper>

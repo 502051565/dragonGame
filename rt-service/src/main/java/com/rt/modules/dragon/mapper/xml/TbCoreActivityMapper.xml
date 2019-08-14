@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rt.modules.course.mapper.TbCoreActivityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.rt.modules.dragon.entity.TbCoreActivity">
+        <id column="id" property="id" />
+        <result column="activity_code" property="activityCode" />
+        <result column="app_code" property="appCode" />
+        <result column="activity_name" property="activityName" />
+        <result column="activity_version" property="activityVersion" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="open_wx" property="openWx" />
+        <result column="wx_id" property="wxId" />
+        <result column="support_plat" property="supportPlat" />
+        <result column="status" property="status" />
+        <result column="mobile_url" property="mobileUrl" />
+        <result column="landing_url" property="landingUrl" />
+        <result column="wechat_url" property="wechatUrl" />
+        <result column="description" property="description" />
+        <result column="update_time" property="updateTime" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+</mapper>
