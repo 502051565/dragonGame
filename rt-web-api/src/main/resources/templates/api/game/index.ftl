@@ -124,7 +124,7 @@
                             </div>
                         </div>
                         <div class="ipt">
-                            <input type="text" placeholder="请输入手机验证码">
+                            <input type="text" placeholder="请输入手机验证码" id="phoneCodeIOS">
                             <div class="Imgcode">
                                 发送验证码
                             </div>
@@ -145,7 +145,7 @@
                             </div>
                         </div>
                         <div class="ipt">
-                            <input type="text" placeholder="请输入手机验证码">
+                            <input type="text" placeholder="请输入手机验证码" id="phoneCodeAnd">
                             <div class="Imgcode">
                                 发送验证码
                             </div>
@@ -236,6 +236,11 @@
             alert("图片验证码不能为空");
             return;
         }
+        var phoneCodeIOS=$("#phoneCodeIOS").val();
+        if(phoneCodeIOS===""){
+            alert("手机验证码不能为空");
+            return;
+        }
         var obj={
             facility:1,
             phone:phoneIOS,
@@ -256,6 +261,11 @@
         }
         if(imgCodeAnd===""){
             alert("图片验证码不能为空");
+            return;
+        }
+        var phoneCodeAnd=$("#phoneCodeAnd").val();
+        if(phoneCodeAnd===""){
+            alert("手机验证码不能为空");
             return;
         }
         var obj={
