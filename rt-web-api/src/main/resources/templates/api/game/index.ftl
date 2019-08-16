@@ -286,7 +286,7 @@
             success: function (re) {
                 if (re.code === 0) {
                     alert("预约成功");
-                    window.location.href="${ctx}/api/activityReserve/index"
+                    window.location.href="${ctx}/api/activityReserve/index?timestamp="+ new Date().getTime()+Math.random();
                 } else {
                     alert(re.msg);
                 }
